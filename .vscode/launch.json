@@ -16,12 +16,27 @@
             "stopAtEntry": false
         },
         {
-            "name": "Debug Star Wars Puns Data",
+            "name": "SWP Data - Rebuild",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/StarWarsPunsData/bin/Debug/netcoreapp2.1/StarWarsPunsData.dll",
-            "args": [],
+            "args": [
+                "rebuild"
+            ],
+            "cwd": "${workspaceFolder}/StarWarsPunsData",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "SWP Data - Populate",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/StarWarsPunsData/bin/Debug/netcoreapp2.1/StarWarsPunsData.dll",
+            "args": [
+                "populate"
+            ],
             "cwd": "${workspaceFolder}/StarWarsPunsData",
             "console": "internalConsole",
             "stopAtEntry": false
