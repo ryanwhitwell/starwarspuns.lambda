@@ -1,0 +1,130 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-Tests",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Tests/Tests.csproj"
+      ],
+      "problemMatcher": "$tsc"
+    },
+    {
+      "label": "build-StarWarsPuns",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/StarWarsPuns/StarWarsPuns.csproj"
+      ],
+      "problemMatcher": "$tsc"
+    },
+    {
+      "label": "publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/Tests/Tests.csproj"
+      ],
+      "problemMatcher": "$tsc"
+    },
+    {
+      "label": "watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "${workspaceFolder}/Tests/Tests.csproj"
+      ],
+      "problemMatcher": "$tsc"
+    },
+    {
+      "label": "build",
+      "command": "dotnet",
+      "args": [
+        "--version"
+      ],
+      "type": "process",
+      "dependsOn": [
+        "build-StarWarsPuns",
+        "build-Tests"
+      ],
+      "problemMatcher": "$tsc",
+      "dependsOrder": "sequence",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "deploy",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "lambda",
+        "deploy-function",
+        "starwarspuns",
+        "--region",
+        "us-east-1",
+        "--profile",
+        "StarWarsPunsLambda",
+        "--function-role",
+        "LambdaService",
+        "--function-memory-size",
+        "128"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/StarWarsPuns"
+      },
+      "problemMatcher": [],
+      "dependsOn": [
+        "build",
+        "test with coverage"
+      ],
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "invoke",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "lambda",
+        "invoke-function",
+        "starwarspuns",
+        "--region",
+        "us-east-1",
+        "--profile",
+        "StarWarsPunsLambda",
+        "--payload",
+        "Just Checking If Everything is OK"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "test with coverage",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "test",
+        "/p:CollectCoverage=true",
+        "/p:CoverletOutputFormat=\"lcov\"",
+        "/p:CoverletOutput=../coverage/",
+        "/p:Threshold=50",
+        "/p:Exclude=\"[xunit.*]*,[*]StarWarsPuns.Core.IOC,[*]StarWarsPuns.Core.IntentRequestName,[*]StarWarsPuns.Core.RequestType,[*]StarWarsPuns.Function\"",
+        "${workspaceFolder}/Tests/Tests.csproj"
+      ],
+      "dependsOn": [
+        "build"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    }
+  ]
+}

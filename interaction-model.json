@@ -1,0 +1,50 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "star wars puns",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetNewPunIntent",
+                    "slots": [],
+                    "samples": [
+                        "a pun",
+                        "a star wars pun",
+                        "tell me a pun",
+                        "tell me a star wars pun",
+                        "give me a star wars pun",
+                        "give me a space fact",
+                        "tell me trivia",
+                        "tell me a space trivia",
+                        "give me trivia",
+                        "give me a space trivia",
+                        "give me some information",
+                        "give me some space information",
+                        "tell me something",
+                        "give me something"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
