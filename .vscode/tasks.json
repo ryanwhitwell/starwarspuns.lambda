@@ -22,6 +22,16 @@
       "problemMatcher": "$tsc"
     },
     {
+      "label": "build-StarWarsPunData",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/StarWarsPunsData/StarWarsPunsData.csproj"
+      ],
+      "problemMatcher": "$tsc"
+    },
+    {
       "label": "publish",
       "command": "dotnet",
       "type": "process",
@@ -51,7 +61,8 @@
       "type": "process",
       "dependsOn": [
         "build-StarWarsPuns",
-        "build-Tests"
+        "build-Tests",
+        "build-StarWarsPunData",
       ],
       "problemMatcher": "$tsc",
       "dependsOrder": "sequence",
