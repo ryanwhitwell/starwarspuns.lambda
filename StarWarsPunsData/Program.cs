@@ -46,12 +46,9 @@ namespace StarWarsPunData.Main
 
     public static void Populate(TableOperator tableOperator, string filePath)
     {
-      List<StarWarsPun> puns = new List<StarWarsPun>();
-
-      puns.Add(new StarWarsPun(0, "Do yo know what?", "Chicken Butt."));
-
-      // Read in puns from file
-      // Add puns to list
+      PunFile punFile = new PunFile(filePath);
+      
+      IEnumerable<StarWarsPun> puns = punFile.GetPuns();
 
       Task.Run(() => tableOperator.AddItems(puns)).Wait();
     }
@@ -63,7 +60,6 @@ namespace StarWarsPunData.Main
 
       AmazonDynamoDBClient client = GetDynamoDBClient();
       
-
       string tableName = CONFIG.GetSection("Application")["TableName"];
       Console.WriteLine(string.Format("Start Working on Table: {0}", tableName));
 

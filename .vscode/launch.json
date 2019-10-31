@@ -35,7 +35,8 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/StarWarsPunsData/bin/Debug/netcoreapp2.1/StarWarsPunsData.dll",
             "args": [
-                "populate"
+                "populate",
+                "./puns.txt"
             ],
             "cwd": "${workspaceFolder}/StarWarsPunsData",
             "console": "internalConsole",
