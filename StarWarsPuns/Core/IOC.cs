@@ -36,6 +36,7 @@ namespace StarWarsPuns.Core
 
       // Business Logic
       serviceCollection.AddSingleton<IDynamoDBContext>(new DynamoDBContext(dynamoDBClient, new DynamoDBContextConfig() { ConsistentRead = true }))
+                        .AddSingleton<IAmazonDynamoDB>(dynamoDBClient)
                         .AddTransient<IRequestBusinessLogic,  RequestBusinessLogic>()
                         .AddTransient<IRequestMapper,         RequestMapper>()
                         .AddTransient<IStarWarsPunRepository, StarWarsPunRepository>();

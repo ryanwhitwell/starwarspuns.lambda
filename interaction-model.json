@@ -4,12 +4,22 @@
             "invocationName": "star wars puns",
             "intents": [
                 {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
                     "name": "AMAZON.CancelIntent",
                     "samples": []
                 },
                 {
                     "name": "AMAZON.HelpIntent",
-                    "samples": []
+                    "samples": [
+                        "what I can say",
+                        "what can I say",
+                        "how to get a pun",
+                        "how to hear puns",
+                        "how to get star wars puns"
+                    ]
                 },
                 {
                     "name": "AMAZON.StopIntent",
@@ -17,10 +27,6 @@
                 },
                 {
                     "name": "AMAZON.NavigateHomeIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.FallbackIntent",
                     "samples": []
                 },
                 {

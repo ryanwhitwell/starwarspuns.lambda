@@ -124,7 +124,7 @@
         "/p:CollectCoverage=true",
         "/p:CoverletOutputFormat=\"lcov\"",
         "/p:CoverletOutput=../coverage/",
-        "/p:Threshold=50",
+        "/p:Threshold=0",
         "/p:Exclude=\"[xunit.*]*,[*]StarWarsPuns.Core.IOC,[*]StarWarsPuns.Core.IntentRequestName,[*]StarWarsPuns.Core.RequestType,[*]StarWarsPuns.Function\"",
         "${workspaceFolder}/Tests/Tests.csproj"
       ],
