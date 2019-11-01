@@ -30,7 +30,7 @@
                     "samples": []
                 },
                 {
-                    "name": "GetNewPunIntent",
+                    "name": "GetNewPun",
                     "slots": [],
                     "samples": [
                         "a pun",
