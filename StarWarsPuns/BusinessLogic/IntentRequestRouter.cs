@@ -5,7 +5,6 @@ using Alexa.NET.Request.Type;
 using Alexa.NET.Response;
 using System;
 using Microsoft.Extensions.Logging;
-using StarWarsPuns.Models;
 using StarWarsPuns.Core;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,20 +14,10 @@ namespace StarWarsPuns.BusinessLogic
 {
   public class IntentRequestRouter : BaseRequestRouter<IntentRequestRouter>
   {
-    public IntentRequestRouter(ISkillRequestValidator skillRequestValidator, ILogger<IntentRequestRouter> logger, IEnumerable<IIntentRequestHandler> intentRequestHandlers) : base(RequestType.IntentRequest, skillRequestValidator, logger, intentRequestHandlers) { }
+    public IntentRequestRouter(ILogger<IntentRequestRouter> logger, IEnumerable<IIntentRequestHandler> intentRequestHandlers) : base(RequestType.IntentRequest, logger, intentRequestHandlers) { }
 
-    public override async Task<SkillResponse> GetSkillResponse(SkillRequest skillRequest, TokenUser tokenUser)
+    public override async Task<SkillResponse> GetSkillResponse(SkillRequest skillRequest)
     {
-      if (!base.SkillRequestValidator.IsValid(skillRequest))
-      {
-        throw new ArgumentNullException("skillRequest");
-      }
-
-      if (tokenUser == null)
-      {
-        throw new ArgumentNullException("tokenUser");
-      }
-      
       base.Logger.LogTrace("BEGIN GetSkillResponse. RequestId: {0}.", skillRequest.Request.RequestId);
 
       IntentRequest intentRequest = skillRequest.Request as IntentRequest;
@@ -47,7 +36,7 @@ namespace StarWarsPuns.BusinessLogic
       }
 
       // Handle the request
-      SkillResponse skillResponse = await Task.Run(() => requestHandler.Handle(skillRequest, tokenUser));
+      SkillResponse skillResponse = await Task.Run(() => requestHandler.Handle(skillRequest));
 
       base.Logger.LogTrace("END GetSkillResponse. RequestId: {0}.", skillRequest.Request.RequestId);
 

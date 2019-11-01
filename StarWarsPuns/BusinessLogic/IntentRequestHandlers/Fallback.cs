@@ -2,9 +2,7 @@ using Alexa.NET.Request;
 using Alexa.NET.Response;
 using Microsoft.Extensions.Logging;
 using StarWarsPuns.BusinessLogic.Interfaces;
-using StarWarsPuns.Models;
 using StarWarsPuns.Core;
-using System;
 
 namespace StarWarsPuns.BusinessLogic.IntentRequestHandlers
 {
@@ -12,20 +10,10 @@ namespace StarWarsPuns.BusinessLogic.IntentRequestHandlers
   {
     public string HandlerName { get { return IntentRequestName.Fallback; } }
     
-    public Fallback(ILogger<Fallback> logger, ISkillRequestValidator skillRequestValidator) : base(logger, skillRequestValidator) { }
+    public Fallback(ILogger<Fallback> logger) : base(logger) { }
 
-    public SkillResponse Handle(SkillRequest skillRequest, TokenUser tokenUser)
+    public SkillResponse Handle(SkillRequest skillRequest)
     {
-      if (!base.skillRequestValidator.IsValid(skillRequest))
-      {
-        throw new ArgumentNullException("skillRequest");
-      }
-      
-      if (tokenUser == null)
-      {
-        throw new ArgumentNullException("tokenUser");
-      }
-      
       logger.LogTrace("BEGIN Fallback. RequestId: {0}.", skillRequest.Request.RequestId);
 
       SkillResponse response = string.Format("Hmm, I'm not sure what you wanted there. Please try again.").Tell(false);

@@ -1,16 +1,13 @@
 
 using System.Threading.Tasks;
 using Alexa.NET.Request;
-using Alexa.NET.Request.Type;
 using Alexa.NET.Response;
 using System;
 using Microsoft.Extensions.Logging;
-using StarWarsPuns.Models;
 using StarWarsPuns.Core;
 using System.Collections.Generic;
 using System.Linq;
 using StarWarsPuns.BusinessLogic.Interfaces;
-using Newtonsoft.Json;
 
 namespace StarWarsPuns.BusinessLogic
 {
@@ -20,25 +17,16 @@ namespace StarWarsPuns.BusinessLogic
 
     private ILogger<T> logger;
 
-    ISkillRequestValidator skillRequestValidator;
-
     private RequestType requestType;
 
     public RequestType RequestType { get { return this.requestType; }}
-
-    public ISkillRequestValidator SkillRequestValidator { get { return this.skillRequestValidator; }}
 
     public IEnumerable<IBaseRequestHandler> RequestHandlers { get { return this.requestHandlers; }}
 
     public ILogger<T> Logger { get { return this.logger; }}
 
-    public BaseRequestRouter(RequestType requestType, ISkillRequestValidator skillRequestValidator, ILogger<T> logger, IEnumerable<IBaseRequestHandler> requestHandlers)
+    public BaseRequestRouter(RequestType requestType, ILogger<T> logger, IEnumerable<IBaseRequestHandler> requestHandlers)
     {
-      if (skillRequestValidator == null)
-      {
-        throw new ArgumentNullException("skillRequestValidator");
-      }
-      
       if (logger == null)
       {
         throw new ArgumentNullException("logger");
@@ -50,7 +38,6 @@ namespace StarWarsPuns.BusinessLogic
       }
 
       this.requestType = requestType;
-      this.skillRequestValidator = skillRequestValidator;
       this.logger = logger;
       this.requestHandlers = requestHandlers;
     }
@@ -60,18 +47,8 @@ namespace StarWarsPuns.BusinessLogic
       return requestHandlers.FirstOrDefault();
     }
 
-    public virtual async Task<SkillResponse> GetSkillResponse(SkillRequest skillRequest, TokenUser tokenUser)
+    public virtual async Task<SkillResponse> GetSkillResponse(SkillRequest skillRequest)
     {
-      if (!this.skillRequestValidator.IsValid(skillRequest))
-      {
-        throw new ArgumentNullException("skillRequest");
-      }
-
-      if (tokenUser == null)
-      {
-        throw new ArgumentNullException("tokenUser");
-      }
-      
       this.logger.LogTrace("BEGIN GetSkillResponse. RequestId: {0}.", skillRequest.Request.RequestId);
 
       IBaseRequestHandler requestHandler = this.GetRequestHandler();
@@ -82,7 +59,7 @@ namespace StarWarsPuns.BusinessLogic
       }
 
       // Handle the request
-      SkillResponse skillResponse = await Task.Run(() => requestHandler.Handle(skillRequest, tokenUser));
+      SkillResponse skillResponse = await Task.Run(() => requestHandler.Handle(skillRequest));
 
       this.logger.LogTrace("END GetSkillResponse. RequestId: {0}.", skillRequest.Request.RequestId);
 

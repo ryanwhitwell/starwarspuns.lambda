@@ -6,7 +6,7 @@ namespace StarWarsPuns.BusinessLogic.Interfaces
 {
   public interface IBaseRequestHandler
   {
-    SkillResponse Handle(SkillRequest skillRequest, TokenUser tokenUser);
+    SkillResponse Handle(SkillRequest skillRequest);
     string HandlerName { get; }
   }
 }

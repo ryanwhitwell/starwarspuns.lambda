@@ -7,6 +7,6 @@ namespace StarWarsPuns.BusinessLogic
 {
   public class SessionEndedRequestRouter : BaseRequestRouter<SessionEndedRequestRouter>
   {
-    public SessionEndedRequestRouter(ISkillRequestValidator skillRequestValidator, ILogger<SessionEndedRequestRouter> logger, IEnumerable<ISessionEndedRequestHandler> requestHandlers) : base(RequestType.SessionEndedRequest, skillRequestValidator, logger, requestHandlers) { }
+    public SessionEndedRequestRouter(ILogger<SessionEndedRequestRouter> logger, IEnumerable<ISessionEndedRequestHandler> requestHandlers) : base(RequestType.SessionEndedRequest, logger, requestHandlers) { }
   }
 }

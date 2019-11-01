@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Alexa.NET.InSkillPricing.Responses;
 using Alexa.NET.Request;
 using Alexa.NET.Request.Type;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using StarWarsPuns.BusinessLogic.Interfaces;
 using StarWarsPuns.Core;
 
@@ -17,15 +15,8 @@ namespace StarWarsPuns.BusinessLogic
 
     private ILogger<RequestMapper> logger;
 
-    ISkillRequestValidator skillRequestValidator;
-    
-    public RequestMapper(ISkillRequestValidator skillRequestValidator, ILogger<RequestMapper> logger, IEnumerable<IRequestRouter> requestHandlers)
+    public RequestMapper(ILogger<RequestMapper> logger, IEnumerable<IRequestRouter> requestHandlers)
     {
-      if (skillRequestValidator == null)
-      {
-        throw new ArgumentNullException("skillRequestValidator");
-      }
-      
       if (logger == null)
       {
         throw new ArgumentNullException("logger");
@@ -36,18 +27,12 @@ namespace StarWarsPuns.BusinessLogic
         throw new ArgumentNullException("requestHandlers");
       }
 
-      this.skillRequestValidator = skillRequestValidator;
       this.logger = logger;
       this.requestHandlers = requestHandlers;
     }
     
     public IRequestRouter GetRequestHandler(SkillRequest skillRequest)
     {
-      if (!this.skillRequestValidator.IsValid(skillRequest))
-      {
-        throw new ArgumentNullException("skillRequest");
-      }
-      
       this.logger.LogTrace("BEGIN GetRequestHandler. RequestId: {0}.", skillRequest.Request.RequestId);
 
       IRequestRouter requestHandler;
@@ -55,10 +40,6 @@ namespace StarWarsPuns.BusinessLogic
       if (skillRequest.Request is IntentRequest)
       {
         requestHandler = this.requestHandlers.FirstOrDefault(x => x.RequestType == RequestType.IntentRequest);
-      }
-      else if (skillRequest.Request is ConnectionResponseRequest)
-      {
-        requestHandler = this.requestHandlers.FirstOrDefault(x => x.RequestType == RequestType.ConnectionResponseRequest);
       }
       else if (skillRequest.Request is AccountLinkSkillEventRequest)
       {
