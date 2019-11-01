@@ -1,96 +1,38 @@
 -----------------------------
 Public Name
 -----------------------------
-Token Tracker
+Star Wars Puns
 
 -----------------------------
 One Sentence Description
 -----------------------------
-Let Token Tracker keep track of your game, it's players, who's winning, and more.
+Funny puns from your favorite space opera.
 
 -----------------------------
 Detailed Description 
 -----------------------------
-Token Tracker lets you keep track of your game's players, their score, who's winning, and more. With Token Tracker you can add players to your game by assigning them a color token. Just have your players pick a color, add them to your game, and start playing. Keeping score is as easy as asking Token Tracker to add or subtract points for a color token. You can also ask Token Tracker to tell you who's winning, who has the lowest score, and what's the average score among all tokens. Asking Token Tracker to reset everyone's score is all it takes to start a new game from scratch. Here's a quick look at the features you'll get with Token Tracker:
+Enjoy hilarious puns that take place in a galaxy far, far away! Simply ask Star Wars Puns to tell you a pun and enjoy.
 
-- Multiple token colors to choose
-- Tracking for each token's score
-- Add and remove points for each token
-- High-score announcement
-- Low-score announcement
-- The average score for the current game
-- Add and remove points from all tokens at once
-- Announce all tokens and their current score
-- Lifetime data storage for subscribers!
-
-Track your points using any of these colors for your player's token:
-white, yellow, blue, red, green, black, brown, azure, ivory, teal, silver, purple, gray, orange, maroon, charcoal, aquamarine, coral, fuchsia, wheat, lime, crimson, khaki, magenta, olden, plum, olive, and cyan
-
-Here's a breakdown of Token Tracker's features and some sample commands to use with this skill:
-
-Add a Token
-Alexa, tell token tracker to add the color blue.
-
-Delete a Token
-Alexa, tell token tracker to remove the color blue.
-
-Give a Token points
-Alexa, tell token tracker to give three points to blue.
-
-Subtract points from a Token
-Alexa, tell token tracker to take two points away from blue.
-
-Get a Token's points
-Alexa, tell token tracker to get the score for blue.
-
-Give points to all Tokens
-Alexa, tell token tracker to give everyone three points.
-
-Subtract points from all Tokens
-Alexa, tell token tracker to subtract three points from everyone.
-
-Reset the points for all Tokens
-Alexa, tell token tracker to reset all of the tokens.
-
-Delete all Tokens
-Alexa, tell token tracker to delete all of the tokens.
-
-Get the highest score
-Alexa, ask token tracker who has the highest score?
-
-Get the lowest score
-Alexa, ask token tracker who has the lowest score?
-
-Get the average score
-Alexa, ask token tracker what is the average score?
-
-Announce all Tokens' points
-Alexa, tell token tracker to read all the scores.
-
-List all Tokens
-Alexa, ask token tracker who is playing?
-
-Announce the number of Tokens
-Alexa, ask token tracker how many tokens there are.
+Star Wars Puns is not affiliated, associated, authorized, endorsed by, or in any way officially connected with The Walt Disney Company, Disney Enterprises, Inc., or any of its subsidiaries or its affiliates.
 
 -----------------------------
 What's new?
 -----------------------------
 
 Example Phrases 
-Alexa, tell token tracker to give three points to blue.
-Alexa, tell token tracker to add the color blue.
-Alexa, ask token tracker who has the highest score?
+Alexa, tell star wars puns to tell me a pun.
+Alexa, tell star wars puns to give me a star wars pun.
+Alexa, ask star wars puns for a pun.
 
 -----------------------------
 Category
 -----------------------------
-Games & Trivia - Game Info & Accessories
+Games & Trivia - Knowledge & Trivia
 
 -----------------------------
 Keywords 
 -----------------------------
-token, points, tokens, point, score, scores, player, color, smarty, know-it-all, relationship, tracker, correct, wrong, incorrect, couple, couples, disagreement, fight, points, games, game, gaming, argument, spouse, score, partner
+star-wars, star, wars, star wars, starwars, pun, puns, funny, silly, hilarious, jokes, absurd, amusing, droll, entertaining, hilarious, ludicrous, playful, ridiculous, silly, whimsical, antic, gas, humdinger, jolly, killing, rich, riot, screaming, slapstick, blithe, capricious, clever, diverting, facetious, farcical, for grins, gelastic, good-humored, hysterical, jocose, jocular, joking, knee-slapper, laughable, merry, mirthful, priceless, riotous, risible, side-splitting, sportive, waggish, witty
 
 -----------------------------
 Privacy Policy URL 
