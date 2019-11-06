@@ -1,7 +1,7 @@
 -----------------------------
 Public Name
 -----------------------------
-Star Wars Puns
+Unofficial Star Wars Puns
 
 -----------------------------
 One Sentence Description
@@ -11,18 +11,18 @@ Funny puns from your favorite space opera.
 -----------------------------
 Detailed Description 
 -----------------------------
-Enjoy hilarious puns that take place in a galaxy far, far away! Simply ask Star Wars Puns to tell you a pun and enjoy.
+Enjoy hilarious puns that take place in a galaxy far, far away! Simply ask Unofficial Star Wars Puns to tell you a pun and enjoy.
 
-Star Wars Puns is not affiliated, associated, authorized, endorsed by, or in any way officially connected with The Walt Disney Company, Disney Enterprises, Inc., or any of its subsidiaries or its affiliates.
+Unofficial Star Wars Puns is not affiliated, associated, authorized, endorsed by, or in any way officially connected with The Walt Disney Company, Disney Enterprises, Inc., or any of its subsidiaries or its affiliates.
 
 -----------------------------
 What's new?
 -----------------------------
 
 Example Phrases 
-Alexa, tell star wars puns to tell me a pun.
-Alexa, tell star wars puns to give me a star wars pun.
-Alexa, ask star wars puns for a pun.
+Alexa, tell unofficial star wars puns to tell me a pun.
+Alexa, tell unofficial star wars puns to give me a star wars pun.
+Alexa, ask unofficial star wars puns for a pun.
 
 -----------------------------
 Category
@@ -32,7 +32,7 @@ Games & Trivia - Knowledge & Trivia
 -----------------------------
 Keywords 
 -----------------------------
-star-wars, star, wars, star wars, starwars, pun, puns, funny, silly, hilarious, jokes, absurd, amusing, droll, entertaining, hilarious, ludicrous, playful, ridiculous, silly, whimsical, antic, gas, humdinger, jolly, killing, rich, riot, screaming, slapstick, blithe, capricious, clever, diverting, facetious, farcical, for grins, gelastic, good-humored, hysterical, jocose, jocular, joking, knee-slapper, laughable, merry, mirthful, priceless, riotous, risible, side-splitting, sportive, waggish, witty
+star, wars, pun, puns, funny, silly, hilarious, jokes, absurd, amusing, droll, entertaining, hilarious, ludicrous, playful, ridiculous, silly, whimsical, antic, gas, humdinger, jolly, killing, rich, riot, screaming, slapstick, blithe, capricious, clever, diverting, facetious, farcical, for grins, gelastic, good-humored, hysterical, jocose, jocular, joking, knee-slapper, laughable, merry, mirthful, priceless, riotous, risible, side-splitting, sportive, waggish, witty
 
 -----------------------------
 Privacy Policy URL 

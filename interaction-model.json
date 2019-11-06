@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "star wars puns",
+            "invocationName": "unofficial star wars puns",
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
